@@ -1,12 +1,13 @@
 CarrierWave.configure do |config|
   config.storage    = :fog
-  config.fog_provider = 'fog/aws'                            # required
+  config.fog_provider = 'fog/aws'
+  config.fog_directory = 'moqmoq'
   config.fog_public = true
   config.fog_credentials = {
     provider: 'AWS',
     aws_access_key_id: Rails.application.credentials.dig(:aws, :access_key_id),
     aws_secret_access_key: Rails.application.credentials.dig(:aws, :secret_access_key),
-    region: 'northeast-1'
+    region: 'ap-northeast-1',
+    path_style: true
   }
-  config.fog_directory = Rails.application.credentials.dig(:aws, :s3_bucket_name)
 end

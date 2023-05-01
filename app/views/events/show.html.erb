@@ -1,0 +1,78 @@
+<!-- Breadcrumb -->
+<nav class="container pt-4 mt-lg-3" aria-label="breadcrumb">
+  <ol class="breadcrumb mb-0">
+    <li class="breadcrumb-item">
+      <a href="index.html"><i class="bx bx-home-alt fs-lg me-1"></i>Home</a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="blog-list-with-sidebar.html">Blog</a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Single Post</li>
+  </ol> 
+</nav>
+
+
+<!-- Post title + Meta  -->
+<section class="container mt-4 pt-lg-2 pb-3">
+  <h1 class="pb-3" style="max-width: 970px;"><%= @event.title %></h1>
+  <div class="d-flex flex-md-row flex-column align-items-md-center justify-content-md-between mb-3">
+    <div class="d-flex align-items-center flex-wrap text-muted mb-md-0 mb-4">
+      <div class="fs-xs border-end pe-3 me-3 mb-2">
+        <span class="badge bg-faded-primary text-primary fs-base">Technology</span>
+      </div>
+      <div class="fs-sm border-end pe-3 me-3 mb-2"><%= @event.start_at.strftime('%Y-%m-%d %H:%M') %></div>
+      <div class="d-flex mb-2">
+      </div>
+    </div>
+    <div class="d-flex align-items-center position-relative ps-md-3 pe-lg-5 mb-2">
+      <div class="ps-3">
+        <a href="#" class="fw-semibold stretched-link"><%= @event.user.name %></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Post image (parallax) -->
+<div class="jarallax mb-lg-5 mb-4" data-jarallax data-speed="0.35" style="height: 36.45vw; min-height: 300px;">
+  <div class="jarallax-img" style="background-image: url(<%= @event.image.url %>);"></div>
+</div>
+
+
+<!-- Post content + Sharing -->
+<section class="container mb-5 pt-4 pb-2 py-mg-4">
+  <div class="row gy-4">
+
+    <!-- Content -->
+    <div class="col-lg-9">
+      <p class="mb-4 pb-2"><%= simple_format(@event.description) %></p>
+    </div>
+      
+    <!-- Sharing -->
+    <div class="col-lg-3 position-relative">
+      <div class="sticky-top ms-xl-5 ms-lg-4 ps-xxl-4" style="top: 105px !important;">
+        <span class="d-block mb-3">5 min read</span>
+        <h6>Share this post:</h6>
+        <div class="mb-4 pb-lg-3">
+          <a href="#" class="btn btn-icon btn-secondary btn-linkedin me-2 mb-2">
+            <i class="bx bxl-linkedin"></i>
+          </a>
+          <a href="#" class="btn btn-icon btn-secondary btn-facebook me-2 mb-2">
+            <i class="bx bxl-facebook"></i>
+          </a>
+          <a href="#" class="btn btn-icon btn-secondary btn-twitter me-2 mb-2">
+            <i class="bx bxl-twitter"></i>
+          </a>
+          <a href="#" class="btn btn-icon btn-secondary btn-instagram me-2 mb-2">
+            <i class="bx bxl-instagram"></i>
+          </a>
+        </div>
+        <button class="btn btn-lg btn-outline-secondary">
+          <i class="bx bx-like me-2 lead"></i>
+          Like it
+          <span class="badge bg-primary shadow-primary mt-n1 ms-3">8</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
