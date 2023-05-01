@@ -10,3 +10,11 @@ ja:
         password_confirmation: パスワード（確認用）
         created_at: 登録日時
         updated_at: 更新日時
+      event:
+        title: イベント名
+        place: 開催場所
+        description: イベント内容
+        image: イベント画像
+        start_at: 開催日時
+        created_at: 登録日時
+        updated_at: 更新日時
